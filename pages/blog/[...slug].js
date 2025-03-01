@@ -50,7 +50,7 @@ export default function Blog({ post, authorDetails, prev, next }) {
           layout={frontMatter.layout || DEFAULT_LAYOUT}
           toc={toc}
           mdxSource={mdxSource}
-          frontMatter={frontMatter}
+          frontmatter={frontMatter}
           authorDetails={authorDetails}
           prev={prev}
           next={next}

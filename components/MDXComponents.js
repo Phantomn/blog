@@ -16,13 +16,18 @@ export const MDXComponents = {
   pre: Pre,
   BlogNewsletterForm: BlogNewsletterForm,
   wrapper: ({ components, layout, ...rest }) => {
-    const Layout = require(`../layouts/${layout}`).default
-    return <Layout {...rest} />
+    if (layout) {
+      const Layout = require(`../layouts/${layout}`).default
+      return <Layout {...rest} />
+    }
+    return <div {...rest} />
   },
 }
 
-export const MDXLayoutRenderer = ({ layout, mdxSource, ...rest }) => {
+export const MDXLayoutRenderer = ({ layout, mdxSource, frontMatter, ...rest }) => {
   const MDXLayout = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
 
-  return <MDXLayout layout={layout} components={MDXComponents} {...rest} />
+  return (
+    <MDXLayout layout={layout} components={MDXComponents} frontmatter={frontMatter} {...rest} />
+  )
 }
