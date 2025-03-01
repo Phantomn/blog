@@ -61,6 +61,12 @@ module.exports = withBundleAnalyzer({
   experimental: {
     largePageDataBytes: 256 * 1000,
   },
+  serverRuntimeConfig: {
+    port: 8008,
+  },
+  publicRuntimeConfig: {
+    port: 8008,
+  },
   async headers() {
     return [
       {

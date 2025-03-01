@@ -8,6 +8,7 @@ const UmamiScript = () => {
       <Script
         async
         defer
+        strategy="afterInteractive"
         data-website-id={siteMetadata.analytics.umamiWebsiteId}
         src="https://umami.example.com/umami.js" // Replace with your umami instance
       />

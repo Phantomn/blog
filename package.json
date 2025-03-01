@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
-    "dev": "next dev",
+    "dev": "next dev -p 8008",
     "build": "next build && node ./scripts/generate-sitemap",
-    "serve": "next start",
+    "serve": "next start -p 8008",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
     "prepare": "husky install"
