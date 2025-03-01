@@ -58,6 +58,9 @@ module.exports = withBundleAnalyzer({
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
+  experimental: {
+    largePageDataBytes: 256 * 1000,
+  },
   async headers() {
     return [
       {
